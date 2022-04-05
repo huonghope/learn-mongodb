@@ -11,6 +11,23 @@
 - Array
 - Decimal128
 - Map
+```s
+Boolean: Dùng để lưu giữ một giá trị Boolean
+Double: Dùng để lưu các trị số thực dấu chấm động.
+Chuỗi: Dùng để lưu trữ dữ liệu, thường là các chuỗi là UTF-8 hợp lệ.
+Số nguyên: Dùng để lưu các giá trị số 32 bit – 64 bit, tùy thuộc vào Máy chủ của bạn.
+Min/Max keys: Dùng để so sánh giá trị của các phần tử BSON thấp nhất – cao nhất.
+Timestamp: Để đánh dấu thời điểm các Document đã được chỉnh sửa.
+Object: Sử dụng khi nhúng các Document vào.
+Mảng: Dùng để lưu các giá trị, mảng hay danh sách vào một key.
+Null: Dùng để lưu một giá trị Null.
+Code: Dùng để lưu JavaScript code vào Document.
+Regular expression: Dùng để lưu trữ Regular Expression.
+Symbol: Hoạt động như một chuỗi.
+Date: Được sử dụng để lưu thời gian (Date & Time) hiện tại.
+Object ID: Để lưu ID của Document.
+Binary data: Để lưu dữ liệu nhị phân.
+```
 
 ## Convert from Scheme to model
 ```javascript
@@ -97,3 +114,8 @@ UserModel.find()                       // find all users
           })
 ```
 
+
+### Aggregation
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fp8ONk%2FbtqzHbgP92T%2FIyaGVUX2U8qX8mBPPBFQ9K%2Fimg.png" width="500">
+
+[Link](https://junho94.tistory.com/11)

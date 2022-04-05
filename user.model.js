@@ -7,11 +7,14 @@ const { roles } = require('../config/roles');
 const userSchema = mongoose.Schema(
   {
     name: {
+      // 1 khai báo kiểu string, bắt buộc và xóa hết khoảng trắng
       type: String,
       required: true,
       trim: true,
     },
     email: {
+      // 1 khai báo kiểu string, bắt buộc và xóa hết khoảng trắng,phải viết thường,là duy nhất
+      // dùng validator để kiểm tra xem có đúng là email hay không
       type: String,
       required: true,
       unique: true,
@@ -24,6 +27,11 @@ const userSchema = mongoose.Schema(
       },
     },
     password: {
+      // 1 biến kiểu String
+      // bắt buốc và xóa khoẳng trống
+      // độ dài tối thiểu là 8
+      // và cần kiểm tra match()
+      // dùng private để toJSON plugin
       type: String,
       required: true,
       trim: true,
