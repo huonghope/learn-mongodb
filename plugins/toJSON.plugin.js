@@ -14,6 +14,7 @@ const deleteAtPath = (obj, path, index) => {
   deleteAtPath(obj[path[index]], path, index + 1);
 };
 
+// dùng để convert createdAt và updatedAt trong các model mongoose
 const toJSON = (schema) => {
   let transform;
   if (schema.options.toJSON && schema.options.toJSON.transform) {
