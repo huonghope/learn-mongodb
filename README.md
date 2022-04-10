@@ -181,3 +181,69 @@ UserModel.find()                       // find all users
 - db.collection.updateMany(): Modifies multiple documents in a collection.
 - db.collection.watch(): Establishes a Change Stream on a collection.
 - db.collection.validate(): Performs diagnostic operations on a collection.
+
+
+### Query data
+1. Find single query
+```bash
+> db.<collection>.find(query);
+{key: value}
+{key: {$ne: value}}
+{key: {$gt: value}}
+{key: {$gte: value}}
+{key: {$lt: value}}
+{key: {$lte: value}}
+{key: {$in: values}}
+{key: {$nin: values}}
+
+# check arrray size
+{key: {$size: values}}
+
+# check exists
+{key: {$exists: values}}
+
+# check where
+{key: {$where: values}}
+
+# count, skip, limit
+> db.collection.find(query).skip(x).limit(y)
+> db.collection.count(query)
+
+
+# sort by key
+# -1 ascending & 1 descending
+> db.collection.find(query).sort({
+  field: -1
+})
+```
+2. Multi-field query
+
+```bash
+db.collection.find({ key1: value2, key2: value2})
+
+# $or operation
+db.collection.find({ $or: [condition1, condition2]})
+```
+
+3. Update query
+```bash
+> db.collection.updateOne(query, data);
+> db.collection.updateMany(query, data);
+
+# query
+{ _id: ObjectId}
+
+# data
+$set: {
+  key: value
+}
+
+# $inc, $push, $pull, $addToSet 
+
+```
+
+4. Delete query
+```bash
+> db.collection.deleteOne(query);
+> db.collection.deleteMany(query);
+```
